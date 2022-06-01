@@ -6,7 +6,8 @@ use App\Http\Livewire\Crud\Movies;
 use App\Http\Livewire\Crud\Cinemas;
 use App\Http\Livewire\Crud\Tickets;
 use App\Http\Livewire\Crud\Halls;
-use App\Http\Livewire\Crud\Orders;
+use App\Http\Livewire\Crud\Seats;
+use App\Http\Livewire\Crud\Customers;
 use App\Http\Livewire\Home;
 use App\Models\Ticket;
 
@@ -28,3 +29,5 @@ Route::get('/movies', Movies\Index::class)->name('movies');
 Route::get('/cinemas', Cinemas\Index::class)->name('cinemas');
 Route::get('/tickets', Tickets\Index::class)->name('tickets');
 Route::get('/halls', Halls\Index::class)->name('halls');
+Route::get('/seats', Seats\Index::class)->name('seats');
+Route::get('/customers', Customers\Index::class)->name('customers');

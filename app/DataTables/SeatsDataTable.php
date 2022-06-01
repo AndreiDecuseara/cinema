@@ -2,9 +2,9 @@
 
 namespace App\DataTables;
 
-use App\Models\Cinema;
-use App\Models\Movie;
-use App\Models\Ticket;
+use App\Models\Hall;
+use App\Models\Seat;
+use App\Models\PublicationCategory;
 use Illuminate\Database\Eloquent\Builder;
 use Updivision\Datatable\Core\Abstracts\DataTable;
 use Updivision\Datatable\Core\Facades\Action;
@@ -12,18 +12,18 @@ use Updivision\Datatable\Core\Facades\Column;
 use Updivision\Datatable\Core\Facades\Filter;
 
 /**
- * Class TicketsDataTable
+ * Class SeatsDataTable
  *
- * @package App\DataTables\Tickets
+ * @package App\DataTables\Seats
  */
-class TicketsDataTable extends DataTable
+class SeatsDataTable extends DataTable
 {
     /** @var string */
-    public string $model = Ticket::class;
+    public string $model = Seat::class;
 
 
     /** @var string */
-    public string $name = 'tickets_datatable';
+    public string $name = 'seats_datatable';
 
     /** @var string */
     public string $sortDir = 'desc'; // 'desc' | 'asc'
@@ -58,22 +58,19 @@ class TicketsDataTable extends DataTable
         // Set your columns
         $this->setColumns([
             Column::ID(),
-            Column::text('ticket_number', 'ticket_number'),
-            Column::text('ticket_price', 'ticket_price'),
-            Column::text('ticket_date_time', 'ticket_date_time'),
-            Column::text('seat_id', 'seat_id'),
-            Column::text('movie', 'movie_id', 'movie')
+            Column::text('seat_nr', 'seat_nr'),
+            Column::text('row_nr', 'row_nr'),
+            Column::text('hall', 'hall_id', 'hall')
             ->setFilterable(true)
             ->setRenderCallback(function ($entity){
-                return $entity->movie->title;
+                return $entity->hall->name;
             }),
         ]);
 
         // // Set your filters
         $this->setFilters([
-            Filter::text('ticket_price', 'ticket_price'),
-            Filter::multiple('movie_id', 'movie_id', 'Movie')
-            ->setOptions(Movie::query()->pluck('title', 'id')->toArray())
+            Filter::multiple('hall_id', 'hall_id', 'Hall')
+            ->setOptions(Hall::query()->pluck('name', 'id')->toArray())
             ->setOptionsNullValue('View all'),
         ]);
 

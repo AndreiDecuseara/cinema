@@ -2,9 +2,8 @@
 
 namespace App\DataTables;
 
-use App\Models\Cinema;
-use App\Models\Movie;
-use App\Models\Ticket;
+use App\Models\Customer;
+use App\Models\PublicationCategory;
 use Illuminate\Database\Eloquent\Builder;
 use Updivision\Datatable\Core\Abstracts\DataTable;
 use Updivision\Datatable\Core\Facades\Action;
@@ -12,18 +11,18 @@ use Updivision\Datatable\Core\Facades\Column;
 use Updivision\Datatable\Core\Facades\Filter;
 
 /**
- * Class TicketsDataTable
+ * Class CustomersDataTable
  *
- * @package App\DataTables\Tickets
+ * @package App\DataTables\Customers
  */
-class TicketsDataTable extends DataTable
+class CustomersDataTable extends DataTable
 {
     /** @var string */
-    public string $model = Ticket::class;
+    public string $model = Customer::class;
 
 
     /** @var string */
-    public string $name = 'tickets_datatable';
+    public string $name = 'customers_datatable';
 
     /** @var string */
     public string $sortDir = 'desc'; // 'desc' | 'asc'
@@ -58,27 +57,29 @@ class TicketsDataTable extends DataTable
         // Set your columns
         $this->setColumns([
             Column::ID(),
-            Column::text('ticket_number', 'ticket_number'),
-            Column::text('ticket_price', 'ticket_price'),
-            Column::text('ticket_date_time', 'ticket_date_time'),
-            Column::text('seat_id', 'seat_id'),
-            Column::text('movie', 'movie_id', 'movie')
-            ->setFilterable(true)
-            ->setRenderCallback(function ($entity){
-                return $entity->movie->title;
-            }),
+            Column::text('first_name', 'first_name'),
+            Column::text('middle_name', 'middle_name'),
+            Column::text('last_name', 'last_name'),
+            Column::text('cnp', 'cnp'),
+            Column::text('email', 'email'),
+            Column::text('country_id', 'country_id'),
         ]);
 
         // // Set your filters
         $this->setFilters([
-            Filter::text('ticket_price', 'ticket_price'),
-            Filter::multiple('movie_id', 'movie_id', 'Movie')
-            ->setOptions(Movie::query()->pluck('title', 'id')->toArray())
-            ->setOptionsNullValue('View all'),
+            Filter::text('cnp', 'cnp'),
+            // Filter::multiple('publication_category_id', 'publication_category_id', 'Category')
+            //     ->setOptions(PublicationCategory::query()->pluck('name', 'id')->toArray())
+            //     ->setOptionsNullValue('View all'),
+            // Filter::multiple('status', 'status')
+            //     ->setOptions([true => 'Active', false => 'Inactive'])
+            //     ->setOptionsNullValue('View all'),
         ]);
 
         // // Set your actions
         $this->setActions([
+            // Action::edit('Customers.edit', ['publication' => 'id']),
+            // Action::delete(),
         ]);
     }
 

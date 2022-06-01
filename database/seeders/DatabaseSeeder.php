@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         MoviesSeeder::class,
         TicketsSeeder::class,
         HallsSeeder::class,
+        SeatsSeeder::class,
+        CustomersSeeder::class
     ];
 
     /**

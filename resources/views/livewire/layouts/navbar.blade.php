@@ -23,9 +23,11 @@
                     <a href="{{ route('cinemas') }}" class="pb-6 lg:ml-10 text-base font-semibold lg:border-b-2 poppins {{ in_array(request()->route()->getName(), ['cinemas']) ? 'text-black-soft border-black-soft' : 'text-gray-faded' }}">Cinemas</a>
                     <a href="{{ route('tickets') }}" class="pb-6 lg:ml-10 text-base font-semibold lg:border-b-2 poppins {{ in_array(request()->route()->getName(), ['tickets']) ? 'text-black-soft border-black-soft' : 'text-gray-faded' }}">Tickets</a>
                     <a href="{{ route('halls') }}" class="pb-6 lg:ml-10 text-base font-semibold lg:border-b-2 poppins {{ in_array(request()->route()->getName(), ['halls']) ? 'text-black-soft border-black-soft' : 'text-gray-faded' }}">Halls</a>
+                    <a href="{{ route('seats') }}" class="pb-6 lg:ml-10 text-base font-semibold lg:border-b-2 poppins {{ in_array(request()->route()->getName(), ['seats']) ? 'text-black-soft border-black-soft' : 'text-gray-faded' }}">Seats</a>
+                    <a href="{{ route('customers') }}" class="pb-6 lg:ml-10 text-base font-semibold lg:border-b-2 poppins {{ in_array(request()->route()->getName(), ['customers']) ? 'text-black-soft border-black-soft' : 'text-gray-faded' }}">Customers</a>
                     {{--
                     <a href="{{ route('reservations') }}" class="pb-6 lg:ml-10 text-base font-semibold lg:border-b-2 poppins {{ in_array(request()->route()->getName(), ['reservations']) ? 'text-black-soft border-black-soft' : 'text-gray-faded' }}">Reservations</a>
-                    <a href="{{ route('customers') }}" class="pb-6 lg:ml-10 text-base font-semibold lg:border-b-2 poppins {{ in_array(request()->route()->getName(), ['customers']) ? 'text-black-soft border-black-soft' : 'text-gray-faded' }}">Customers</a>
+
                     --}}
                     <a href="{{ config('app.production_url') }}" class="pb-6 text-base font-semibold lg:ml-10 poppins lg:hidden text-gray-faded">LuxeXchange</a>
                     <a wire:click='logout' class="pb-6 text-base font-semibold lg:ml-10 poppins lg:hidden text-gray-faded">Logout</a>
