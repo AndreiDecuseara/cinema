@@ -1,0 +1,1 @@
+<script src="{{ mix('js/tailwind.js') }}"></script>

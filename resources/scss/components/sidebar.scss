@@ -1,0 +1,42 @@
+.sidebar {
+    width: $sidebar_width;
+    @apply transition-all duration-400 ease-in-out fixed top-0 left-0 hidden h-screen px-4 overflow-hidden bg-white border-r-2 lg:block;
+
+    .sidebar__menu {
+        height: 78.5vh;
+        @apply overflow-y-auto overflow-x-hidden w-full;
+    }
+
+    #sidebar_logo_active {
+        @apply w-0 opacity-0;
+    }
+
+    #sidebar_logo,
+    #sidebar_logo_active {
+        @apply transition-all duration-200 ease-out;
+    }
+
+    &.active {
+        width: $sidebar_active_width;
+
+        #sidebar_logo {
+            @apply w-0 opacity-0;
+        }
+
+        #sidebar_logo_active {
+            width: 100% !important;
+            opacity: 1 !important;
+            @apply duration-400;
+        }
+
+        ~ {
+            .main {
+                margin-left: $sidebar_active_width;
+            }
+
+            .navbar {
+                padding-left: calc(#{$sidebar_active_width} + 1.75rem);
+            }
+        }
+    }
+}

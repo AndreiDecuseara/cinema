@@ -1,0 +1,30 @@
+.form {
+    &-select {
+        @apply bg-white #{!important};
+        background-image: url('/img/icons/select-icon-blue.png') !important;
+        background-size: 11px 6px !important;
+    }
+
+    &-input {
+        @apply w-full text-sm py-2.5 px-4 rounded-md shadow-input text-black-form;
+    }
+
+    &-datepicker {
+        background-image: url('/img/icons/calendar_icon.svg');
+        background-repeat: no-repeat;
+        background-position-x: 98%;
+        background-position-y: 50%;
+    }
+
+    &-group {
+        @apply flex flex-col mb-9;
+    }
+
+    &-label {
+        @apply mb-3 text-sm font-semibold text-black-soft;
+    }
+
+    &-error {
+        @apply mt-1 text-sm text-danger;
+    }
+}

@@ -1,0 +1,35 @@
+.link {
+    @include generate-buttons((
+        "primary": (
+            "classes": "transition-opacity text-anchor-primary",
+            "default_modifier": "lg",
+            "modifiers": (
+                "lg": "text-lg font-semibold",
+                "md": "text-base font-medium",
+                "sm": "text-sm font-medium"
+            ),
+            "hover": "opacity-80"
+        ),
+        "secondary": (
+            "classes": "transition-opacity text-anchor-secondary",
+            "default_modifier": "lg",
+            "modifiers": (
+                "lg": "text-lg font-semibold",
+                "md": "text-base font-medium",
+                "sm": "text-sm font-medium"
+            ),
+            "hover": "opacity-80"
+        ),
+        "info": (
+            "classes": "transition-opacity text-anchor-info",
+            "default_modifier": "sm",
+            "modifiers": (
+                "lg": "text-lg font-semibold",
+                "md": "text-base font-medium",
+                "sm": "text-sm font-medium"
+            ),
+            "hover": "opacity-80"
+        )
+    ));
+
+}

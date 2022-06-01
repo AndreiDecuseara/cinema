@@ -1,0 +1,64 @@
+.button {
+    @include generate-buttons((
+        "primary": (
+            "classes": "bg-primary text-white uppercase rounded transition-opacity",
+            "default_modifier": "md",
+            "modifiers": (
+                "lg": "font-bold text-lg py-4 px-10 rounded-lg",
+                "md": "font-semibold text-sm py-2.5 px-7",
+                "sm": "font-semibold text-xs py-2 px-6"
+            ),
+            "hover": "opacity-80"
+        ),
+        "secondary": (
+            "classes": "bg-secondary text-primary uppercase rounded transition-opacity",
+            "default_modifier": "md",
+            "modifiers": (
+                "lg": "font-bold text-lg py-4 px-10 rounded-lg",
+                "md": "font-semibold text-sm py-2.5 px-7",
+                "sm": "font-semibold text-xs py-2 px-6"
+            ),
+            "hover": "opacity-80"
+        ),
+        "info": (
+            "classes": "bg-info text-white uppercase rounded transition-opacity",
+            "default_modifier": "md",
+            "modifiers": (
+                "lg": "font-bold text-lg py-4 px-10 rounded-lg",
+                "md": "font-semibold text-sm py-2.5 px-7",
+                "sm": "font-semibold text-xs py-2 px-6"
+            ),
+            "hover": "opacity-80"
+        ),
+        "danger": (
+            "classes": "bg-danger text-white uppercase rounded transition-opacity",
+            "default_modifier": "md",
+            "modifiers": (
+                "lg": "font-bold text-lg py-4 px-10 rounded-lg",
+                "md": "font-semibold text-sm py-2.5 px-7",
+                "sm": "font-semibold text-xs py-2 px-6"
+            ),
+            "hover": "opacity-80"
+        ),
+        "dark": (
+            "classes": "bg-dark text-white uppercase rounded transition-opacity",
+            "default_modifier": "md",
+            "modifiers": (
+                "lg": "font-bold text-lg py-4 px-10 rounded-lg",
+                "md": "font-semibold text-sm py-2.5 px-7",
+                "sm": "font-semibold text-xs py-2 px-6"
+            ),
+            "hover": "opacity-80"
+        ),
+        "empty": (
+            "classes": "bg-white text-slate-500 uppercase rounded transition-opacity box-shadow-1",
+            "default_modifier": "md",
+            "modifiers": (
+                "lg": "font-semibold text-lg py-4 px-10 rounded-lg",
+                "md": "text-sm py-2.5 px-7",
+                "sm": "text-xs py-2 px-6"
+            ),
+            "hover": "bg-slate-500 bg-opacity-5"
+        )
+    ));
+}

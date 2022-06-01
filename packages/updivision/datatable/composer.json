@@ -1,0 +1,32 @@
+{
+    "name": "updivision/datatable",
+    "description": "Custom datatables by Updivision",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Updivision\\Datatable\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "cerneigabriel-updivision",
+            "email": "gabriel.cernei@updivision.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5|^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Updivision\\Datatable\\DataTableServiceProvider"
+            ],
+            "aliases": {
+                "Datatable": "Updivision\\Datatable"
+            }
+        }
+    }
+}

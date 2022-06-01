@@ -1,0 +1,46 @@
+.main {
+    margin-left: $sidebar_width;
+    @apply transition-all duration-400 ease-in-out lg:pt-0;
+
+    &-filters {
+        @apply px-5 lg:px-16 py-10;
+    }
+
+    &-content {
+        @apply px-5 lg:px-16 py-10 bg-blue-light;
+    }
+}
+
+.navbar {
+    @apply transition-all duration-400 ease-in-out fixed w-full z-50 px-5 pt-2 pb-2 bg-white border-b-2 lg:pt-6 lg:static lg:pb-0 pl-7 lg:px-10 lg:pl-28;
+}
+
+.page_title {
+    @apply text-3xl font-semibold;
+}
+
+.box-shadow-1 {
+    box-shadow: inset 0px 0px 0px 2px #5C99AC;
+    box-sizing: border-box;
+}
+
+.separator {
+    height: 562px;
+    @apply border-l-2 border-opacity-10 hidden lg:block;
+}
+
+.preview-photo {
+    height: 519px;
+    @apply w-100;
+}
+
+.file-field {
+    @apply absolute opacity-0 cursor-pointer h-full w-1/2;
+}
+
+@import "sidebar";
+@import "table";
+
+@import "button";
+@import "link";
+@import "form";
