@@ -99,7 +99,6 @@ class MoviesDataTable extends DataTable
         // // Set your actions
         $this->setActions([
             // Action::edit('Movies.edit', ['publication' => 'id']),
-            Action::delete(),
         ]);
     }
 

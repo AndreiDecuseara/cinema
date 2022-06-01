@@ -80,7 +80,6 @@ class TicketsDataTable extends DataTable
         // // Set your actions
         $this->setActions([
             // Action::edit('Tickets.edit', ['publication' => 'id']),
-            Action::delete(),
         ]);
     }
 

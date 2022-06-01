@@ -75,7 +75,6 @@ class HallsDataTable extends DataTable
 
         // // Set your actions
         $this->setActions([
-            Action::delete(),
         ]);
     }
 
