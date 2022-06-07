@@ -20,6 +20,9 @@ class DeleteAction extends DataTableAction
     /** @var string */
     public string $primaryKey = 'id';
 
+    /** @var bool */
+    public bool $requireConfirmation = true;
+
     /**
      * @param string|null $name
      */
@@ -48,6 +51,17 @@ class DeleteAction extends DataTableAction
     public function setPrimaryKey($primaryKey): self
     {
         $this->primaryKey = $primaryKey;
+
+        return $this;
+    }
+
+    /**
+     * @param bool $requireConfirmation
+     * @return $this
+     */
+    public function setRequireConfirmation(bool $requireConfirmation)
+    {
+        $this->requireConfirmation = $requireConfirmation;
 
         return $this;
     }

@@ -79,7 +79,7 @@ class CustomersDataTable extends DataTable
         // // Set your actions
         $this->setActions([
             // Action::edit('Customers.edit', ['publication' => 'id']),
-            // Action::delete(),
+            Action::delete(),
         ]);
     }
 

@@ -76,6 +76,7 @@ class SeatsDataTable extends DataTable
 
         // // Set your actions
         $this->setActions([
+            Action::delete(),
         ]);
     }
 

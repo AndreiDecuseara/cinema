@@ -1,8 +1,13 @@
-<a
-    href="javascript:void();"
-    onclick="if(!confirm('Are you sure?')) { event.preventDefault(); }"
-    wire:click="delete({{ $entity->{$primaryKey} }})"
-    {{ $action->renderAttributes() }}
->
-    {{ $action->text }}
-</a>
+<div x-data="{ deleteDataTableRecordModal: false }" x-on:show-delete-datatable-record-modal-{{ $entity->{$primaryKey}
+    }}.window="deleteDataTableRecordModal = true" > <a href="javascript:void();"
+        wire:click="deleteAction({{ $entity->{$primaryKey} }})" {{ $action->renderAttributes() }} > {{ $action->text }}
+    </a> @if($action->requireConfirmation) <x-modals.modal :size="'sm'" :xshow="'deleteDataTableRecordModal'"
+        :title="'Delete #' . $entity->{$primaryKey}" :actions="[
+                [
+                    'close_modal_onclick' => true,
+                    'text' => 'Yes',
+                    'attributes' => [
+                        'wire:click' => 'deleteAction(' . $entity->{$primaryKey} . ', true)'
+                    ]
+                ]
+            ]"> Are you sure you want to delete record #{{ $entity->{$primaryKey} }}? </x-modals.modal> @endif </div>

@@ -145,4 +145,26 @@ class Datatable extends Component
         $this->pageLength = $pageLength;
         $this->syncWithDataTable('pagination');
     }
+
+    public function deleteAction($id, bool $confirmed = false)
+    {
+        $deleteAction = $this->datatable->actions()->firstWhere('name', 'delete');
+
+        if ($deleteAction) {
+            if ($deleteAction->requireConfirmation && !$confirmed) {
+                $this->dispatchBrowserEvent("show-delete-datatable-record-modal-$id");
+                return false;
+            }
+
+            if ($entity = $this->datatable->model::find($id)) {
+                $this->emitUp('beforeDeleteActionPerformed', $entity);
+
+                if ($entity->delete()) {
+                    $this->emitUp('afterDeleteActionPerformed', $entity);
+
+                    return true;
+                }
+            }
+        }
+    }
 }
